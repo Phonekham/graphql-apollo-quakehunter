@@ -2,18 +2,32 @@ const { gql } = require("apollo-server");
 
 const typeDefs = gql`
   type Query {
-    quakes: [Quake]!
+    quakes(
+      """
+      The number of results to show. Must be >= 1. Default = 20
+      """
+      pageSize: Int
+      """
+      If you add a cursor here, it will only return results _after_ this cursor
+      """
+      after: String
+    ): QuakeConnection!
     quake(id: ID!): Quake
-    users: [User!]
-    # Queries for the current user
-    me: User
+    users: [User]
+    me: User # Queries for the current user
+  }
+
+  type QuakeConnection {
+    cursor: String!
+    hasMore: Boolean!
+    quakes: [Quake]!
   }
   type Quake {
     id: ID
     magnitude: Float
     location: String
     when: String
-    time: String
+    cursor: String
   }
   type User {
     id: ID!
