@@ -13,7 +13,8 @@
     "apollo-datasource": "^0.7.0",
     "apollo-datasource-rest": "^0.8.1",
     "apollo-server": "^2.12.0",
-    "graphql": "^15.0.0"
+    "graphql": "^15.0.0",
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
