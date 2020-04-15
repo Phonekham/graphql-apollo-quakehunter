@@ -26,4 +26,20 @@ module.exports = {
       dataSources.quakeAPI.getQuakeById({ quakeId: id }),
     users: (_, __, { dataSources }) => dataSources.userAPI.getUsers(),
   },
+  Mutation: {
+    login: async (_, { email }, { dataSources }) => {
+      const user = await dataSources.userAPI.getUser({ email });
+      if (user) return Buffer.from(email).toString("base64");
+    },
+    saveRecord: async (_, { recordId }, { dataSources }) => {
+      const result = await dataSources.userAPI.saveRecord({ recordId });
+      return {
+        success: result.length ? true : false,
+        message: result.length
+          ? "Quake data saved success"
+          : "Quake data not save",
+        records: result,
+      };
+    },
+  },
 };
