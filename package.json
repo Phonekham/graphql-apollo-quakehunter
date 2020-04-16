@@ -4,19 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "cd server && nodemon index.js"
+    "server": "cd server && nodemon index.js",
+    "react-start": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run react-start\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
     "apollo-datasource": "^0.7.0",
     "apollo-datasource-rest": "^0.8.1",
+    "apollo-link-http": "^1.5.17",
     "apollo-server": "^2.12.0",
     "graphql": "^15.0.0",
+    "graphql-tag": "^2.10.3",
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
+    "concurrently": "^5.1.0",
     "nodemon": "^2.0.3"
   }
 }
