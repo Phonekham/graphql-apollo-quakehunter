@@ -28,8 +28,8 @@ module.exports = {
     users: (_, __, { dataSources }) => dataSources.userAPI.getUsers(),
   },
   Mutation: {
-    login: async (_, { email }, { dataSources }) => {
-      const user = await dataSources.userAPI.getUser({ email });
+    login: async (_, { email, password }, { dataSources }) => {
+      const user = await dataSources.userAPI.getUser({ email, password });
       if (user) {
         const token = jwt.sign({ email: user.email }, "secret_key", {
           expiresIn: 60 * 60,
@@ -38,6 +38,7 @@ module.exports = {
       }
       if (!user) {
         console.log("User not in db");
+        return "";
       }
     },
     saveRecord: async (_, { recordId }, { dataSources }) => {

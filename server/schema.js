@@ -44,7 +44,7 @@ const typeDefs = gql`
     # if false, deleting record failed -- check errors
     deleteRecord(recordId: ID!): RecordUpdateResponse!
 
-    login(email: String): String # login token
+    login(email: String, password: String): String # login token
   }
   type RecordUpdateResponse {
     success: Boolean!
