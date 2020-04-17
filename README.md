@@ -1,2 +1,23 @@
 # graphql-apollo-quakehunter
- GraphQ & client
+## Server Dependencies 
+ - "apollo-cache-inmemory": "^1.6.5",
+ - "apollo-client": "^2.6.8",
+ - "apollo-datasource": "^0.7.0",
+ - "apollo-datasource-rest": "^0.8.1",
+ - "apollo-link-http": "^1.5.17",
+ - "apollo-server": "^2.12.0",
+ - "graphql": "^15.0.0",
+ - "graphql-tag": "^2.10.3",
+ - "jsonwebtoken": "^8.5.1"
+## Client Dependencies
+ - "@apollo/react-hooks": "^3.1.5",
+ - "@testing-library/jest-dom": "^4.2.4",
+ - "@testing-library/react": "^9.5.0",
+ - "@testing-library/user-event": "^7.2.1",
+ - "apollo-cache-inmemory": "^1.6.5",
+ - "apollo-client": "^2.6.8",
+ - "apollo-link-http": "^1.5.17",
+ - "graphql-tag": "^2.10.3",
+ - "react": "^16.13.1",
+ - "react-dom": "^16.13.1",
+ - "react-scripts": "3.4.1"
